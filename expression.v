@@ -1,6 +1,6 @@
 //NAND (~A&~B&~C)|(~A&~B&~D)|(~A&B&C&D)|(A&~B&C&D)|(A&B&~C)
 //NOR (A|B|~C|~D)&(A|~B|C)&(A|~B|D)&(~A|~B|~C)&(~A|B|C)&(~A|B|D)
-module main(input a,b,c,d,output notand,notor);
+module expgate(input a,b,c,d,output notand,notor);
     wire z1,z2,z3,z4,z5;
     wire x1,x2,x3,x4,x5,x6;
     wire dnota,dnotb,dnotc,dnotd;
@@ -28,4 +28,11 @@ module main(input a,b,c,d,output notand,notor);
     M5(x5,rnota,b,c),
     M6(x6,rnota,b,d),
     M7(notor,x1,x2,x3,x4,x5,x6);
+endmodule
+
+//dataflow modeling
+
+module expdataflow(input a,b,c,d,output pos,sop);
+    assign pos = (a|b|~c|~d)&(a|~b|c|d)&(a|~b|c|~d)&(a|~b|~c|d)&(~a|b|c|d)&(a|~b|~c|d)&(~a|b|~c|d)&(~a|~b|~c|d)&(~a|~b|~c|~d);
+    assign sop = (~a&~b&~c&~d)|(~a&~b&~c&d)|(~a&~b&c&~d)|(~a&~b&c&d)|(a&~b&c&d)|(a&b&~c&~d)|(~a&~b&c&~d);
 endmodule

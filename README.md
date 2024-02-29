@@ -10,6 +10,7 @@
   + 3-bit parallel adder
   + 4-bit parallel adder/subtractor using same circuit
   + Priority encoder
+  + Sequence Detector(overlapping and non-overlapping)
   ### Flip Flops:
    + SR Flip Flop
    + D Flip Flop
@@ -24,4 +25,3 @@
    + 3-bit up counter using JK flip flop
    + Up/Down counter using JK flip flop
    + Sequence counter(random sequence, synchronous)
-  + Sequence Detector(overlapping and non-overlapping)

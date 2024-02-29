@@ -24,4 +24,4 @@
    + 3-bit up counter using JK flip flop
    + Up/Down counter using JK flip flop
    + Sequence counter(random sequence, synchronous)
-  Sequence Detector(overlapping and non-overlapping)
+  + Sequence Detector(overlapping and non-overlapping)
